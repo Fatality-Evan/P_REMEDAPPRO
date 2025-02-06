@@ -6,7 +6,15 @@
     - Le contrat est OK, il ne reste qu'à en faire une version pdf signée et la mettre dans le repo
     - Commencez à coder la bataille navale
 
-## journal de travail
-- Quelques explications du prof : 25 minutes
-- Imprimer le contrat de travail pour le projet : 10 minutes
-- Coder le menu de démarrage de la bataille naval (coder les erreurs): 145 minutes 
+- journal de travail
+    - Quelques explications du prof : 25 minutes
+    - Imprimer le contrat de travail pour le projet : 10 minutes
+    - Coder le menu de démarrage de la bataille naval (coder les erreurs): 145 minutes 
+
+## 7.2
+- Feedback XCL
+    - Mettez votre code dans le repo Git, que je puisse y avoir accès
+    - Pour le journal: détaillez plus. 145 minutes sans commentaires, c'est long
+ 
+- journal de travail
+    - ...
