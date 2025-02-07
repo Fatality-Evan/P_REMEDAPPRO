@@ -7,9 +7,9 @@
     - Commencez à coder la bataille navale
 
 - journal de travail
-    - Quelques explications du prof : 25 minutes
-    - Imprimer le contrat de travail pour le projet : 10 minutes
-    - Coder le menu de démarrage de la bataille naval (coder les erreurs): 145 minutes 
+    - 25 minutes :Quelques explications du prof
+    - 10 minutes : Imprimer le contrat de travail pour le projet : 10 minutes
+    - 145 minutes :Coder le menu de démarrage de la bataille naval (Faire le code du titre, mettre en place des boucles qui demande au joueur combient de case aura le jeu + mettre les erreurs)
 
 ## 7.2
 - Feedback XCL
@@ -17,4 +17,5 @@
     - Pour le journal: détaillez plus. 145 minutes sans commentaires, c'est long
  
 - journal de travail
-    - ...
+    - 100 minutes : commencer la grille du plateau de jeu (inspiration de ma grille de puissance 4 et aide de Jonathan Junod)
+    - 35 minutes : recherche dans les fichers de prog comment faire une grille de plateau de jeu
