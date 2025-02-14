@@ -19,3 +19,11 @@
 - journal de travail
     - 100 minutes : commencer la grille du plateau de jeu (inspiration de ma grille de puissance 4 et aide de Jonathan Junod)
     - 35 minutes : recherche dans les fichers de prog comment faire une grille de plateau de jeu
+
+## 14.2
+- Feedback XCL
+    - Mettez votre code dans le repo Git, que je puisse y avoir accès. Attention : je vous ai déjà demandé ça la semaine passée, ne vous loupez pas cette fois
+    - Dans votre journal, mettez le résultat de vos recherches
+ 
+- journal de travail
+    - ...
