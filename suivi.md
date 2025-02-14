@@ -29,4 +29,4 @@
     - 30 minutes :finir de coder le tableau de jeu
     - 30 minutes : coder les règles du jeu
     - 30 minutes : mettre le menu dans une méthode (avec l'aide de Jonathan Junod)
-    - 
+    - 45 minutes : mettre la possibilité de choisir le nombre de bateau sur le plateau de jeu
