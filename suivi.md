@@ -26,4 +26,7 @@
     - Dans votre journal, mettez le résultat de vos recherches
  
 - journal de travail
-    - ...
+    - 30 minutes :finir de coder le tableau de jeu
+    - 30 minutes : coder les règles du jeu
+    - 30 minutes : mettre le menu dans une méthode (avec l'aide de Jonathan Junod)
+    - 
