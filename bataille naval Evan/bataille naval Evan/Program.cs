@@ -26,13 +26,36 @@ namespace bataille_naval_Evan
             const byte NB_BOAT_MIN = 1;
             const byte NB_BOAT_MAX = 2;
 
+            string boat1 = "torpilleur";
+            string boat2 = "porte avion";
+            string boat3 = "sous marin";
+            string boat4 = "croiseur";
+
+            byte nbBoat1 = 0;
+            byte nbBoat2 = 0;
+            byte nbBoat3 = 0;
+            byte nbBoat4 = 0;
+            
+
             // titre du jeu
             Title();
 
             nRow = Ask_row_col(row, NB_ROW_MAX, NB_ROW_MIN);
             nCol = Ask_row_col(col, NB_COL_MAX, NB_COL_MIN);
+            BattleBoat(NB_BOAT_MAX, NB_BOAT_MIN);
+            BattleBoat(NB_BOAT_MAX, NB_BOAT_MIN);
+            BattleBoat(NB_BOAT_MAX, NB_BOAT_MIN);
+            BattleBoat(NB_BOAT_MAX, NB_BOAT_MIN);
+
+            int[,] grille = new int[nRow, nCol];
+
+            // torpilleur
+            grille[2,4] = 1;
+            grille[2,5] = 1;
+            grille[2,6] = 1;
 
             Console.WriteLine("\nBien, vous aurez donc un tableau de jeu de " + nRow + "*" + nCol);
+            Console.WriteLine();
             Console.WriteLine("Bon, je vais vous laissez joueur à la bataille naval :)");
             Console.ReadLine();
 
@@ -188,6 +211,19 @@ namespace bataille_naval_Evan
                 }
             }
             while (boat < min || boat > max);
+            return boat;
+        }
+        static void byeTitle()
+        {
+            //titre d'aideu au joueur
+            Console.SetCursorPosition(35, 35);
+            Console.WriteLine("╔════════════════════════════════════════════════════════╗");
+            Console.SetCursorPosition(35, 1);
+            Console.WriteLine("║           au revoir et à bientot sur mon jeu           ║");
+            Console.SetCursorPosition(35, 2);
+            Console.WriteLine("║        Réalisé par Evan Gusarov le 07.02.25 ETML       ║");
+            Console.SetCursorPosition(35, 3);
+            Console.WriteLine("╚════════════════════════════════════════════════════════╝");
         }
     }
 }
