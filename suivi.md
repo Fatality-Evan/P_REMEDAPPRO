@@ -30,3 +30,12 @@
     - 30 minutes : coder les règles du jeu
     - 30 minutes : mettre le menu dans une méthode (avec l'aide de Jonathan Junod)
     - 45 minutes : mettre la possibilité de choisir le nombre de bateau sur le plateau de jeu
+
+## 28.2
+
+- Feedback XCL
+    - Le code est dans le repo, merci
+    - Faites des commits atomiques: ne mettez pas le code ET la mise à jour de votre suivi dans le même commit: ce sont deux choses différentes qui doivent aller dans deux commits différents
+    - Ne committez pas du code qui ne compile pas. Mettez les lignes problématiques en commentaire avan de commiter.
+    - Vous avez passé 45 minutes à "mettre la possibilité de choisir le nombre de bateau sur le plateau de jeu", mais je ne vois aucun code qui correspond au nombre de bateaux. 
+
