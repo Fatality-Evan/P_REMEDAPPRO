@@ -39,3 +39,9 @@
     - Ne committez pas du code qui ne compile pas. Mettez les lignes problématiques en commentaire avan de commiter.
     - Vous avez passé 45 minutes à "mettre la possibilité de choisir le nombre de bateau sur le plateau de jeu", mais je ne vois aucun code qui correspond au nombre de bateaux. 
 
+- journal de travail
+    - 30 minutes : refaire la demande des bateaux
+    - 10 minutes : faire le message d'adieu quand le joueur part
+    - 15 minutes : explication du prof pour le projet
+    - 45 minutes : améliorer la demande pour les bateaux
+    - 
