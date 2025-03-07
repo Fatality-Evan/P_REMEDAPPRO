@@ -44,4 +44,14 @@
     - 10 minutes : faire le message d'adieu quand le joueur part
     - 15 minutes : explication du prof pour le projet
     - 45 minutes : améliorer la demande pour les bateaux
-    - 
+
+
+
+## 7.3
+
+- Feedback XCL
+    - J'avais demandé de faire un bilan des objectifs, il n'a pas été fait
+    - Le journal de travail est incomplet: 100 minutes alors que vous en aviez 135 à disposition
+    - Nommage de commits: il est nécessaire maintenant d'améliorer ce point car il est insuffisant à ce stade
+
+- Journal de travail
