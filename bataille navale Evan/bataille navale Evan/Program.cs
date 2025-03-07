@@ -79,10 +79,7 @@ namespace bataille_naval_Evan
 
 
             Title();//affiche le titre du jeu
-
             Grid(nRow, nCol, axeX, axeY, tabGames); //affiche le plateau de jeu
-
-
             Rules(nBoat1, nBoat2, nBoat3, nBoat4); //affiche les règle du jeu + le nb de bateau restant
             MoveInGrid(nRow, nCol); //permet de déplacer le joueur sur le plateau de jeu
 
@@ -289,9 +286,20 @@ namespace bataille_naval_Evan
                         break;
                     case ConsoleKey.Enter://tirer et poser les bateaux
                         Console.SetCursorPosition(axeX * 2 + 10, axeY + 9);
-                        Console.Write('X');
-
-
+                        if (Touched(tabGames, axeX, axeY))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;//met une croix rouge si un bateau est touché
+                            Console.Write('X');
+                        }
+                        else
+                        {
+                            Console.ForegroundColor= ConsoleColor.Blue;//met un carré bleu si c'est l'eau qui est touché
+                            Console.Write('■');
+                        }
+                        break;
+                    case ConsoleKey.Escape:
+                        Console.Clear();
+                        byeTitle();
                         break;
                 }
             }
@@ -300,16 +308,34 @@ namespace bataille_naval_Evan
         static void PlaceBoat(int nRow, int nCol, int axeX, int axeY, int[,] tabGames, byte nBoat1, byte nBoat2, byte nBoat3, byte nBoat4)
         {
             //taille des bateaux
-            int sizeBoat1 = 2;
-            int sizeBoat2 = 5;
-            int sizeBoat3 = 3;
-            int sizeBoat4 = 4;
+            int sizeBoat1 = 2;//taille torpilleur
+            int sizeBoat2 = 5;//taille porte avion
+            int sizeBoat3 = 3;//taille sous marin
+            int sizeBoat4 = 4;//taille croiseur
 
             //position des bateaux
-            int posBoat1 = 0;
-            int posBoat2 = 0;
-            int posBoat3 = 0;
-            int posBoat4 = 0;
+            
+        }
+        static bool Touched(int[,] tabGames, int nRow, int nCol)
+        {
+            bool shoot = false;
+            if (tabGames[nCol, nRow] == 1)
+            {
+                shoot = true;
+            }
+            return shoot;
+        }
+        static void byeTitle()
+        {
+            // Titre d'adieu de la bataille navale
+            Console.CursorLeft = 35;
+            Console.WriteLine("╔════════════════════════════════════════════════════════╗");
+            Console.SetCursorPosition(35, 1);
+            Console.WriteLine("║                au plaisir de vous revoir :)            ║");
+            Console.SetCursorPosition(35, 2);
+            Console.WriteLine("║        Réalisé par Evan Gusarov le 07.02.25 ETML       ║");
+            Console.SetCursorPosition(35, 3);
+            Console.WriteLine("╚════════════════════════════════════════════════════════╝");
         }
     }
 }
