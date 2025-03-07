@@ -44,7 +44,7 @@
     - 10 minutes : faire le message d'adieu quand le joueur part
     - 15 minutes : explication du prof pour le projet
     - 45 minutes : améliorer la demande pour les bateaux
-
+    - 35 minutes : tester mon code C# et verifier que je n'ai pas fait d'erreur
 
 
 ## 7.3
@@ -55,3 +55,7 @@
     - Nommage de commits: il est nécessaire maintenant d'améliorer ce point car il est insuffisant à ce stade
 
 - Journal de travail
+    - 50 minutes : faire une méthode, avec l'aide de jonathan, qui permet d'afficher les cases qui sont dans l'eau et les cases où il y a des bateaux
+    - 10 minutes : faire le status.md 
+    - 45 minutes essayer de corriger l'erreur avec le curseur dans le jeu
+    - 30 minutes tester le code C# que tout fonctionne bien
