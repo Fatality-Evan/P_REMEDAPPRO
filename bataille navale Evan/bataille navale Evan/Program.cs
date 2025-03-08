@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 /// ETML
 /// Evan Gusarov
-/// 15.02.2025
+/// 24.01.2025
 /// Bataille naval
 
 namespace bataille_naval_Evan
@@ -164,7 +164,7 @@ namespace bataille_naval_Evan
             Console.SetCursorPosition(68, 28);
             Console.WriteLine("Croiseur\t " + nBoat4);
             Console.SetCursorPosition(68, 32);
-            Console.WriteLine("Nombre de tir effectué : ");
+            Console.WriteLine("Nombre de tir restant : ");
         }
         static int Ask_row_col(string row_col, int max, int min)
         {
@@ -247,6 +247,7 @@ namespace bataille_naval_Evan
             //position du joueur
             int axeX = 0; //colonne
             int axeY = 0; //ligne
+            int nbShootMax = 100; //nombre de tir maximum que le joueur peut faire
 
 
             //permet de déplacer le joueur sur le plateau de jeu
@@ -285,17 +286,31 @@ namespace bataille_naval_Evan
                         }
                         break;
                     case ConsoleKey.Enter://tirer et poser les bateaux
-                        Console.SetCursorPosition(axeX * 2 + 10, axeY + 9);
-                        if (Touched(tabGames, axeX, axeY))
+                        if (nbShootMax > 0)
                         {
-                            Console.ForegroundColor = ConsoleColor.Red;//met une croix rouge si un bateau est touché
-                            Console.Write('X');
+                            Console.SetCursorPosition(axeX * 2 + 10, axeY + 9);
+                            if (Touched(tabGames, axeX, axeY))
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;//met une croix rouge si un bateau est touché
+                                Console.Write('X');
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Blue;//met un carré bleu si c'est l'eau qui est touché
+                                Console.Write('■');
+                            }
+                            Console.ResetColor();
+                            nbShootMax--;
+
+                            Console.SetCursorPosition(92, 32);
+                            Console.WriteLine(nbShootMax);
                         }
                         else
                         {
-                            Console.ForegroundColor= ConsoleColor.Blue;//met un carré bleu si c'est l'eau qui est touché
-                            Console.Write('■');
+                            Console.SetCursorPosition(68, 32);
+                            Console.WriteLine("Vous n'avez plus de tir");
                         }
+
                         break;
                     case ConsoleKey.Escape:
                         Console.Clear();
@@ -307,14 +322,10 @@ namespace bataille_naval_Evan
         }
         static void PlaceBoat(int nRow, int nCol, int axeX, int axeY, int[,] tabGames, byte nBoat1, byte nBoat2, byte nBoat3, byte nBoat4)
         {
-            //taille des bateaux
-            int sizeBoat1 = 2;//taille torpilleur
-            int sizeBoat2 = 5;//taille porte avion
-            int sizeBoat3 = 3;//taille sous marin
-            int sizeBoat4 = 4;//taille croiseur
 
-            //position des bateaux
-            
+
+
+
         }
         static bool Touched(int[,] tabGames, int nRow, int nCol)
         {
