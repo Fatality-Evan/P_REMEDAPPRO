@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 /// ETML
 /// Evan Gusarov
 /// 24.01.2025
-/// Bataille naval
+/// Bataille navale
 
 namespace bataille_naval_Evan
 {
@@ -14,6 +14,8 @@ namespace bataille_naval_Evan
     {
         static void Main(string[] args)
         {
+            
+
             // le nombre minimum que l'on peut mettre pour les lignes et les colonnes
             const byte NB_ROW_MIN = 10;
             const byte NB_COL_MIN = 10;
@@ -80,11 +82,9 @@ namespace bataille_naval_Evan
 
 
             Title();//affiche le titre du jeu
-            Grid(nRow, nCol, axeX, axeY, tabGames); //affiche le plateau de jeu
-            
+            Grid(nRow, nCol, tabGames); //affiche le plateau de jeu
             Rules(nBoat1, nBoat2, nBoat3, nBoat4); //affiche les règle du jeu + le nb de bateau restant
             MoveInGrid(nRow, nCol); //permet de déplacer le joueur sur le plateau de jeu
-
             Console.Read();
         }
         static void Title()
@@ -101,7 +101,7 @@ namespace bataille_naval_Evan
             Console.WriteLine();
             Console.WriteLine();
         }
-        static void Grid(int nRow, int nCol, int axeX, int axeY, int[,] tabGames)
+        static void Grid(int nRow, int nCol, int[,] tabGames)
         {
             // affichage du plateau de jeu bataille naval
 
@@ -311,6 +311,7 @@ namespace bataille_naval_Evan
                         {
                             Console.SetCursorPosition(68, 32);
                             Console.WriteLine("Vous n'avez plus de tir");
+                            showBoat(nRow, nCol, tabGames, axeX, axeY);
                         }
 
                         break;
@@ -321,9 +322,7 @@ namespace bataille_naval_Evan
                 }
             }
             while (key != ConsoleKey.Escape);//tant que le joueur n'appuie pas sur la touche escape, le jeu continue
-        }
-        static void PlaceBoat()
-        {
+            
 
         }
         static bool Touched(int[,] tabGames, int nRow, int nCol)
@@ -346,6 +345,28 @@ namespace bataille_naval_Evan
             Console.WriteLine("║        Réalisé par Evan Gusarov le 07.02.25 ETML       ║");
             Console.SetCursorPosition(35, 3);
             Console.WriteLine("╚════════════════════════════════════════════════════════╝");
+        }
+        static void showBoat(int nRow, int nCol, int[,] tabGames, int axeX, int axeY)
+        {
+            Console.Clear();
+            Grid(nRow, nCol, tabGames);
+            for (int i = 0; i < nCol; i++)
+            {
+                for (int y = 0; y < nRow; y++)
+                {
+                    Console.SetCursorPosition(i * 2 + 10, y + 3);
+                    if (tabGames[y, i] != 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write('X');
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        Console.Write('■');
+                    }
+                }
+            }
         }
     }
 }
