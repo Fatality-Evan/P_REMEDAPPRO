@@ -55,6 +55,7 @@ namespace bataille_naval_Evan
 
 
 
+
             // titre du jeu
             Title();
 
@@ -80,6 +81,7 @@ namespace bataille_naval_Evan
 
             Title();//affiche le titre du jeu
             Grid(nRow, nCol, axeX, axeY, tabGames); //affiche le plateau de jeu
+            
             Rules(nBoat1, nBoat2, nBoat3, nBoat4); //affiche les règle du jeu + le nb de bateau restant
             MoveInGrid(nRow, nCol); //permet de déplacer le joueur sur le plateau de jeu
 
@@ -247,7 +249,7 @@ namespace bataille_naval_Evan
             //position du joueur
             int axeX = 0; //colonne
             int axeY = 0; //ligne
-            int nbShootMax = 100; //nombre de tir maximum que le joueur peut faire
+            int nbShootMax = 150; //nombre de tir maximum que le joueur peut faire
 
 
             //permet de déplacer le joueur sur le plateau de jeu
@@ -320,11 +322,8 @@ namespace bataille_naval_Evan
             }
             while (key != ConsoleKey.Escape);//tant que le joueur n'appuie pas sur la touche escape, le jeu continue
         }
-        static void PlaceBoat(int nRow, int nCol, int axeX, int axeY, int[,] tabGames, byte nBoat1, byte nBoat2, byte nBoat3, byte nBoat4)
+        static void PlaceBoat()
         {
-
-
-
 
         }
         static bool Touched(int[,] tabGames, int nRow, int nCol)
