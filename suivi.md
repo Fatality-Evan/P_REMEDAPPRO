@@ -69,4 +69,7 @@
     - Jdt OK
 
 - Journal de travail
-    -
+- 30 minutes : explication du prof
+- 45 minutes : trouver l'erreur du curseur
+- 15 minutes : mettre les variables pour les bateaux
+- 45 minutes : tester mon code pour voir les problème, style le curseur ou les bateaux
