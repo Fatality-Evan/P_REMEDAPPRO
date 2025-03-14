@@ -59,3 +59,14 @@
     - 10 minutes : faire le status.md 
     - 45 minutes essayer de corriger l'erreur avec le curseur dans le jeu
     - 30 minutes tester le code C# que tout fonctionne bien
+
+    
+## 14.3
+
+- Feedback XCL
+    - Il y a deux dossiers "bataille nava..." dans votre repo. Il faut n'en garder qu'un.
+    - Les progrès du code de la semaine passée sont spectaculaires. J'aimerais en parler avec vous, car à la lecture de votre journal et de vos commits, je ne parviens pas à comprendre comment vous en êtes arrivé là.
+    - Jdt OK
+
+- Journal de travail
+    -
