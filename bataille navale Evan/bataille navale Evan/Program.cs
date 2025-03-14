@@ -14,11 +14,12 @@ namespace bataille_naval_Evan
     {
         static void Main(string[] args)
         {
-            
+            //met la fenêtre windows plus grande
+            Console.SetWindowSize(220, 60);
 
             // le nombre minimum que l'on peut mettre pour les lignes et les colonnes
             const byte NB_ROW_MIN = 10;
-            const byte NB_COL_MIN = 10;
+            const byte NB_COL_MIN = 11;
 
             // Nombre maximum que l'on peut mettre pour les lignes et colonnes
             const byte NB_ROW_MAX = 50;
@@ -52,9 +53,6 @@ namespace bataille_naval_Evan
             int axeX = 0; //colonne
             int axeY = 0; //ligne
 
-            //fait le tableau à 2 dimensions du jeu
-            int[,] tabGames = new int[nRow, nCol];
-
 
 
 
@@ -64,6 +62,8 @@ namespace bataille_naval_Evan
             //permet de choisir le nombre de lignes et de colonnes dans le jeu
             nRow = Ask_row_col(row, NB_ROW_MAX, NB_ROW_MIN);
             nCol = Ask_row_col(col, NB_COL_MAX, NB_COL_MIN);
+
+            //fait le tableau à 2 dimensions du jeu
 
             //permet de choisir le nombre de bateau que le joueur veut
             nBoat1 = BattleBoat(boat1, NB_BOAT_MAX, NB_BOAT_MIN);
@@ -75,16 +75,18 @@ namespace bataille_naval_Evan
             Console.WriteLine("\nBien, vous aurez donc un tableau de jeu de " + nRow + "*" + nCol);
             Console.WriteLine("et vous aurez aussi " + nBoat1 + " " + boat1 + ", " + nBoat2 + " " + boat2 + ", " + nBoat3 + " " + boat3 + " et " + nBoat4 + " " + boat4);
             Console.WriteLine("Bon, je vais vous laissez joueur à la bataille naval :)");
-            Console.ReadLine();
+            Console.Read();
 
             //efface l'écran pour que le joueur puisse jouer
             Console.Clear();
 
 
+            int[,] tabGames = new int[nRow, nCol];
+            PlaceBoat(tabGames);
             Title();//affiche le titre du jeu
             Grid(nRow, nCol, tabGames); //affiche le plateau de jeu
             Rules(nBoat1, nBoat2, nBoat3, nBoat4); //affiche les règle du jeu + le nb de bateau restant
-            MoveInGrid(nRow, nCol); //permet de déplacer le joueur sur le plateau de jeu
+            MoveInGrid(tabGames, nRow, nCol); //permet de déplacer le joueur sur le plateau de jeu
             Console.Read();
         }
         static void Title()
@@ -166,7 +168,7 @@ namespace bataille_naval_Evan
             Console.SetCursorPosition(68, 28);
             Console.WriteLine("Croiseur\t " + nBoat4);
             Console.SetCursorPosition(68, 32);
-            Console.WriteLine("Nombre de tir restant : ");
+            Console.Write("Nombre de tir restant : ");
         }
         static int Ask_row_col(string row_col, int max, int min)
         {
@@ -241,10 +243,8 @@ namespace bataille_naval_Evan
             while (boat < min || boat > max);
             return boat;
         }
-        static void MoveInGrid(int nRow, int nCol)
+        static void MoveInGrid(int[,] tabGames, int nRow, int nCol)
         {
-            //tableau a 2 dimensions qui représente le plateau de jeu
-            int[,] tabGames = new int[nRow, nCol];
 
             //position du joueur
             int axeX = 0; //colonne
@@ -254,6 +254,7 @@ namespace bataille_naval_Evan
 
             //permet de déplacer le joueur sur le plateau de jeu
             ConsoleKey key;
+            Console.SetCursorPosition(axeX * 2 + 10, axeY + 9);
             do
             {
 
@@ -270,7 +271,7 @@ namespace bataille_naval_Evan
                         }
                         break;
                     case ConsoleKey.DownArrow://déplacement vers le bas
-                        if (axeY < nRow - 1)
+                        if (axeY < nRow +1)
                         {
                             axeY++;
                         }
@@ -282,7 +283,7 @@ namespace bataille_naval_Evan
                         }
                         break;
                     case ConsoleKey.RightArrow://déplacement vers la droite
-                        if (axeX < nCol - 1)
+                        if (axeX < nCol +1)
                         {
                             axeX++;
                         }
@@ -304,18 +305,18 @@ namespace bataille_naval_Evan
                             Console.ResetColor();
                             nbShootMax--;
 
-                            Console.SetCursorPosition(92, 32);
+                            Console.SetCursorPosition(92, 32);//donne le nombre de coup restant
                             Console.WriteLine(nbShootMax);
                         }
                         else
                         {
                             Console.SetCursorPosition(68, 32);
-                            Console.WriteLine("Vous n'avez plus de tir");
-                            showBoat(nRow, nCol, tabGames, axeX, axeY);
+                            Console.WriteLine("Vous n'avez plus de tir");//message qui dit au joueur qu'il n'a plus de tir
+                            showBoat(nRow, nCol, tabGames, axeX, axeY);//montre au joueur où était les bateaux sur la grille de jeu
                         }
 
                         break;
-                    case ConsoleKey.Escape:
+                    case ConsoleKey.Escape://va sur un écran d'adieu
                         Console.Clear();
                         byeTitle();
                         break;
@@ -327,6 +328,7 @@ namespace bataille_naval_Evan
         }
         static bool Touched(int[,] tabGames, int nRow, int nCol)
         {
+            //verifie si les cases du tableau à 2 dimensions vaut 1 ou pas
             bool shoot = false;
             if (tabGames[nCol, nRow] == 1)
             {
@@ -355,18 +357,44 @@ namespace bataille_naval_Evan
                 for (int y = 0; y < nRow; y++)
                 {
                     Console.SetCursorPosition(i * 2 + 10, y + 3);
-                    if (tabGames[y, i] != 0)
+                    if (tabGames[y, i] != 0)//marque un X rouge si il y a un bateau
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write('X');
                     }
                     else
                     {
+                        //marque un carré bleu si il n'y a pas de bateau
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
                         Console.Write('■');
                     }
                 }
             }
         }
+        static void PlaceBoat(int[,] tabGames)
+        {
+            //variable du sous marin
+            tabGames[1, 0] = 1;
+            tabGames[1, 1] = 1;
+            tabGames[1, 2] = 1;
+
+            //variable porte avion
+            tabGames[5, 7] = 1;
+            tabGames[5, 8] = 1;
+            tabGames[5, 9] = 1;
+            tabGames[5, 10] = 1;
+            tabGames[5, 11] = 1;
+
+            //variable croiseur
+            tabGames[3, 4] = 1;
+            tabGames[4, 4] = 1;
+            tabGames[5, 4] = 1;
+            tabGames[6, 4] = 1;
+
+            //variable torpilleur
+            tabGames[8, 5] = 1;
+            tabGames[8, 6] = 1;
+        }
+
     }
 }
