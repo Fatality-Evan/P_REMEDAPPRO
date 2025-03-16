@@ -69,7 +69,19 @@
     - Jdt OK
 
 - Journal de travail
-- 30 minutes : explication du prof
-- 45 minutes : trouver l'erreur du curseur
-- 15 minutes : mettre les variables pour les bateaux
-- 45 minutes : tester mon code pour voir les problème, style le curseur ou les bateaux
+    - 30 minutes : explication du prof
+    - 45 minutes : trouver l'erreur du curseur
+    - 15 minutes : mettre les variables pour les bateaux
+    - 45 minutes : tester mon code pour voir les problème, style le curseur ou les bateaux
+ 
+# Conclusion
+
+Le résultat est plutôt bon. L'interface utilisateur est agréable, dommage que le problème de curseur n'ait pas été résolu. Je n'arrive pas à déplacer le curseur avec précision : le déplacement répond toujours à une touche précédente. De plus, au moment de tirer, la case atteinte par mentir n'est pas celle où se trouve le curseur.
+
+Du coup, je suis assez surpris de voir de votre journal "trouver l'erreur du curseur". Il ne me semble pas que vous l'avez trouvée. De plus, on ne peut pas dire que l'objectif "le joueur doit pouvoir tirer dans les cases du plateau de jeu" est atteint puisque les tirs n'arrivent pas là où je veux.
+
+Il y a un point qui me dérange particulièrement : vous avez modifié un objectif en cours de route. Dans votre statut, vous dites que vous avez atteint l'objectif "le code doit pouvoir afficher les bateaux qui sont touché et les cases vide". Cela est correct. Ce qui ne va pas, c'est que l'objectif dans le contrat que nous avons signé disait "le code doit pouvoir afficher les bateaux qui sont touché, coulé et de marquer les cases qui sont touchées dans l'eau". Ce n'est pas le cas : les bateaux coulés ne sont pas affiché comme tel.
+
+Si cela avait été un vrai projet, je n'aurais pas validé.
+
+Mais comme il s'agit d'un projet d'approfondissement, je les valide car vous avez effectivement amélioré vos compétences C#
